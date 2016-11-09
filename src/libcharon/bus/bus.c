@@ -249,11 +249,12 @@ static inline void unregister_logger(private_bus_t *this, logger_t *logger)
 
 	if (found)
 	{
-		level_t level = LEVEL_SILENT, vlevel = LEVEL_SILENT;
 		debug_t group;
 
 		for (group = 0; group < DBG_MAX; group++)
 		{
+			level_t level = LEVEL_SILENT, vlevel = LEVEL_SILENT;
+
 			if (found->levels[group] > LEVEL_SILENT)
 			{
 				loggers = this->loggers[group];
